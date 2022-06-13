@@ -1,6 +1,6 @@
 
 var min = 999;
-let completed = [];
+let completed = []; //completed path and cost of path 
 let tsp = [
     [0, 4, 1, 3],
     [4, 0, 2, 1],
@@ -16,13 +16,13 @@ TSProblem(tsp, 0)
 function TSProblem(tsp, s) {
 
     for (let i = 0; i < tsp.length; i++) {
-        if (i === s) {
+        if (i === s) { // avoid first element in the path and find the minimum cost of remaining path
             let sorted = tsp[i].filter((e, k) => k !== s)
             min = Math.min(...sorted);
             let index = tsp[i].indexOf(Math.min(...sorted))
             completed.push({ value: min, index: index })
         }
-        if (i !== s) {
+        if (i !== s) { // avoid complete path ,avoid cost of of the where row index and column index are same and find the minimum cost of remaining path
 
             let l = completed.length;
             console.log(l, (tsp.length - 1))
