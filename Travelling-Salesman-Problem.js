@@ -22,7 +22,7 @@ function TSProblem(tsp, s) {
             let index = tsp[i].indexOf(Math.min(...sorted))
             completed.push({ value: min, index: index })
         }
-        if (i !== s) { // avoid complete path ,avoid cost of of the where row index and column index are same and find the minimum cost of remaining path
+        if (i !== s) { // avoid completed path ,avoid the cost where row index and column index are same and find the minimum cost of remaining path
 
             let l = completed.length;
             console.log(l, (tsp.length - 1))
